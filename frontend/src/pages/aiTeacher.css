@@ -1,0 +1,323 @@
+/*=========================================================
+                LEARNQUEST AI TEACHER
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.ai-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:40px;
+
+    background:#04080f;
+
+    font-family:'Rajdhani',sans-serif;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/*==============================
+        BACKGROUND
+===============================*/
+
+.ai-page::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(circle,#ffffff55 1px,transparent 1px),
+radial-gradient(circle,#6ea8ff55 1px,transparent 1px),
+radial-gradient(circle,#8b5cf655 1px,transparent 1px);
+
+background-size:170px 170px;
+
+opacity:.45;
+
+pointer-events:none;
+
+}
+
+.ai-page::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at top,#2848c730,transparent 60%),
+radial-gradient(circle at bottom,#5b21b630,transparent 60%);
+
+pointer-events:none;
+
+}
+
+.ai-page>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*==============================
+            CARD
+===============================*/
+
+.ai-card{
+
+width:850px;
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.96),
+rgba(8,12,30,.96)
+);
+
+padding:35px;
+
+border-radius:22px;
+
+border:1px solid rgba(90,160,255,.25);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.35);
+
+transition:.35s;
+
+}
+
+.ai-card:hover{
+
+transform:translateY(-5px);
+
+border-color:#7ec3ff;
+
+box-shadow:
+0 0 30px rgba(70,150,255,.35);
+
+}
+
+/*==============================
+            TITLE
+===============================*/
+
+.ai-card h1{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:32px;
+
+color:#cfe8ff;
+
+margin-bottom:15px;
+
+text-shadow:0 0 15px rgba(70,150,255,.4);
+
+}
+
+.ai-card p{
+
+color:#9fc7ff;
+
+font-size:17px;
+
+line-height:1.7;
+
+}
+
+/*==============================
+        TEXT AREA
+===============================*/
+
+.ai-card textarea{
+
+width:100%;
+
+height:170px;
+
+margin-top:25px;
+
+padding:18px;
+
+background:#0f172a;
+
+border:1px solid rgba(90,160,255,.25);
+
+border-radius:15px;
+
+resize:none;
+
+outline:none;
+
+color:white;
+
+font-size:17px;
+
+transition:.3s;
+
+}
+
+.ai-card textarea::placeholder{
+
+color:#8aa9d6;
+
+}
+
+.ai-card textarea:focus{
+
+border-color:#7ec3ff;
+
+box-shadow:
+0 0 15px rgba(70,150,255,.35);
+
+}
+
+/*==============================
+        BUTTON
+===============================*/
+
+.ai-card button{
+
+margin-top:20px;
+
+width:100%;
+
+padding:15px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#6d28d9
+);
+
+border:none;
+
+border-radius:14px;
+
+color:white;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.ai-card button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 22px rgba(70,150,255,.45);
+
+}
+
+/*==============================
+        ANSWER BOX
+===============================*/
+
+.answer-box{
+
+margin-top:30px;
+
+padding:25px;
+
+background:linear-gradient(
+145deg,
+rgba(18,30,70,.95),
+rgba(10,15,35,.95)
+);
+
+border:1px solid rgba(90,160,255,.2);
+
+border-radius:18px;
+
+color:#d8ecff;
+
+line-height:1.8;
+
+font-size:17px;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.3);
+
+}
+
+/*==============================
+        RESPONSIVE
+===============================*/
+
+@media(max-width:900px){
+
+.ai-card{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.ai-page{
+
+padding:20px;
+
+}
+
+.ai-card{
+
+padding:25px;
+
+}
+
+.ai-card h1{
+
+font-size:26px;
+
+}
+
+.ai-card textarea{
+
+height:150px;
+
+font-size:16px;
+
+}
+
+.ai-card button{
+
+font-size:16px;
+
+}
+
+.answer-box{
+
+font-size:16px;
+
+}
+
+}

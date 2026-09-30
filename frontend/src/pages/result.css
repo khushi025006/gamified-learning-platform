@@ -1,0 +1,33 @@
+.result-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+}
+
+.result-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.result-card h1 {
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.result-score {
+  font-size: 32px;
+  font-weight: bold;
+  color: #059669;
+}
+
+.result-xp {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #f59e0b;
+}

@@ -1,0 +1,410 @@
+/*=========================================================
+                LEARNQUEST PROFILE
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.profile-page{
+
+    min-height:100vh;
+
+    padding:35px;
+
+    background:#04080f;
+
+    font-family:'Rajdhani',sans-serif;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Background */
+
+.profile-page::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(circle,#ffffff60 1px,transparent 1px),
+radial-gradient(circle,#7aa8ff60 1px,transparent 1px),
+radial-gradient(circle,#8b5cf660 1px,transparent 1px);
+
+background-size:170px 170px;
+
+opacity:.45;
+
+pointer-events:none;
+
+}
+
+.profile-page::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at top,#2448c230,transparent 60%),
+radial-gradient(circle at bottom,#5b21b630,transparent 60%);
+
+pointer-events:none;
+
+}
+
+.profile-page>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*=========================================================
+            PROFILE CARD
+=========================================================*/
+
+.profile-card{
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.96),
+rgba(8,12,30,.96)
+);
+
+border:1px solid rgba(100,170,255,.25);
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.35);
+
+transition:.3s;
+
+}
+
+.profile-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 35px rgba(70,150,255,.35);
+
+}
+
+/* Avatar */
+
+.avatar{
+
+font-size:85px;
+
+margin-bottom:15px;
+
+filter:drop-shadow(0 0 18px #5ba9ff);
+
+}
+
+/* Name */
+
+.profile-card h1{
+
+font-family:'Cinzel Decorative',serif;
+
+color:#c8e2ff;
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+.profile-card p{
+
+color:#9ec7ff;
+
+margin-top:5px;
+
+font-size:18px;
+
+}
+
+/* Level */
+
+.level{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 24px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#6d28d9
+);
+
+color:white;
+
+border-radius:40px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+box-shadow:
+0 0 20px rgba(70,140,255,.4);
+
+}
+
+/*=========================================================
+            SELECT + BUTTON
+=========================================================*/
+
+select{
+
+width:230px;
+
+padding:12px;
+
+margin-top:20px;
+
+background:#0f172a;
+
+color:white;
+
+border:1px solid #4f7fff;
+
+border-radius:12px;
+
+font-size:16px;
+
+outline:none;
+
+}
+
+.profile-card button{
+
+padding:12px 20px;
+
+margin-left:15px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#4f46e5
+);
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.profile-card button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 20px rgba(70,150,255,.45);
+
+}
+
+/*=========================================================
+            STATS
+=========================================================*/
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:22px;
+
+margin-top:35px;
+
+}
+
+.stat-box{
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.95),
+rgba(8,12,30,.95)
+);
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid rgba(90,170,255,.2);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 25px rgba(70,150,255,.35);
+
+}
+
+.stat-box h2{
+
+color:#d7ebff;
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+color:#93bfff;
+
+}
+
+/*=========================================================
+        ACHIEVEMENT
+=========================================================*/
+
+.achievement-card{
+
+margin-top:35px;
+
+padding:28px;
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.95),
+rgba(8,12,30,.95)
+);
+
+border-radius:20px;
+
+border:1px solid rgba(90,170,255,.2);
+
+}
+
+.achievement-card h2{
+
+font-family:'Cinzel Decorative',serif;
+
+color:#b8dbff;
+
+margin-bottom:20px;
+
+}
+
+/*=========================================================
+            BADGES
+=========================================================*/
+
+.badges{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.badge{
+
+padding:14px 18px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#6d28d9
+);
+
+border-radius:14px;
+
+color:white;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.badge:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 18px rgba(100,150,255,.45);
+
+}
+
+/*=========================================================
+            RESPONSIVE
+=========================================================*/
+
+@media(max-width:1100px){
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-card button{
+
+margin-top:15px;
+
+margin-left:0;
+
+width:100%;
+
+}
+
+select{
+
+width:100%;
+
+}
+
+}

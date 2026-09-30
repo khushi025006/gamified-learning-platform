@@ -1,0 +1,19 @@
+.subject-page {
+  padding: 25px;
+}
+
+.chapter-card {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+}
+
+.quiz-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}

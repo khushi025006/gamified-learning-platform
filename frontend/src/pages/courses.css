@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
+.courses-page{
+    min-height:100vh;
+    padding:30px;
+    background:#040812;
+    color:white;
+    font-family:'Rajdhani',sans-serif;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Stars */
+
+.courses-page::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#ffffff90 1px,transparent 1px),
+    radial-gradient(circle,#9fd2ff70 1px,transparent 1px),
+    radial-gradient(circle,#cfc8ff70 1px,transparent 1px);
+
+    background-size:
+    180px 180px,
+    260px 260px,
+    340px 340px;
+
+    animation:stars 90s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes stars{
+
+from{
+background-position:0 0;
+}
+
+to{
+background-position:-600px 600px;
+}
+
+}
+
+/* Fog */
+
+.courses-page::after{
+
+content:"";
+position:fixed;
+inset:0;
+
+background:
+
+radial-gradient(circle at top,
+rgba(30,70,180,.25),
+transparent 45%),
+
+radial-gradient(circle at bottom,
+rgba(80,30,180,.18),
+transparent 55%);
+
+pointer-events:none;
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+.courses-header{
+
+margin-bottom:35px;
+
+}
+
+.courses-header h1{
+
+font-family:'Cinzel Decorative',serif;
+font-size:34px;
+color:#9ecbff;
+margin-bottom:10px;
+text-shadow:0 0 18px rgba(120,180,255,.4);
+
+}
+
+.courses-header p{
+
+color:#b5c9f3;
+font-size:18px;
+
+}
+
+/* ===========================
+GRID
+=========================== */
+
+.courses-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+/* ===========================
+CARD
+=========================== */
+
+.course-card{
+
+background:
+
+linear-gradient(145deg,
+
+rgba(12,18,45,.95),
+
+rgba(7,10,28,.98));
+
+border:1px solid rgba(100,160,255,.25);
+
+border-radius:18px;
+
+padding:25px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 25px rgba(0,0,0,.4);
+
+}
+
+.course-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#63b4ff;
+
+box-shadow:
+
+0 0 30px rgba(80,150,255,.4);
+
+}
+
+/* glowing line */
+
+.course-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:3px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+#7fc6ff,
+
+transparent);
+
+animation:scan 5s linear infinite;
+
+}
+
+@keyframes scan{
+
+100%{
+
+left:100%;
+
+}
+
+}
+
+/* ===========================
+ICON
+=========================== */
+
+.course-icon{
+
+font-size:58px;
+
+margin-bottom:15px;
+
+text-align:center;
+
+filter:drop-shadow(0 0 15px #5caeff);
+
+animation:float 3s ease-in-out infinite alternate;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* ===========================
+TITLE
+=========================== */
+
+.course-card h2{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:22px;
+
+margin-bottom:15px;
+
+color:#c6ddff;
+
+}
+
+/* ===========================
+LEVEL BADGE
+=========================== */
+
+.level{
+
+display:inline-block;
+
+padding:7px 14px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#2656d9,
+
+#662ad6);
+
+font-weight:bold;
+
+font-size:14px;
+
+margin-bottom:18px;
+
+color:white;
+
+}
+
+/* ===========================
+PROGRESS
+=========================== */
+
+.progress-container{
+
+width:100%;
+
+height:10px;
+
+background:#182543;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+.progress-fill{
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#2b6cff,
+
+#9c55ff);
+
+border-radius:30px;
+
+transition:1s;
+
+}
+
+/* completion */
+
+.course-card p{
+
+margin-top:12px;
+
+font-size:15px;
+
+color:#d3def7;
+
+}
+
+/* ===========================
+XP BOX
+=========================== */
+
+.xp-reward{
+
+margin-top:20px;
+
+padding:12px;
+
+border-radius:12px;
+
+text-align:center;
+
+font-weight:bold;
+
+background:
+
+rgba(122,64,255,.18);
+
+border:
+
+1px solid rgba(130,120,255,.4);
+
+color:#f4d3ff;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+.start-btn{
+
+width:100%;
+
+margin-top:22px;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:bold;
+
+font-family:'Rajdhani',sans-serif;
+
+color:white;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#2467ff,
+
+#7d2dff);
+
+transition:.3s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.start-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.3),
+
+transparent);
+
+transition:.5s;
+
+}
+
+.start-btn:hover{
+
+transform:scale(1.04);
+
+box-shadow:
+
+0 0 20px #4f9cff;
+
+}
+
+.start-btn:hover::before{
+
+left:100%;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.courses-page{
+
+padding:18px;
+
+}
+
+.courses-header h1{
+
+font-size:26px;
+
+}
+
+.course-card{
+
+padding:20px;
+
+}
+
+.course-icon{
+
+font-size:46px;
+
+}
+
+.course-card h2{
+
+font-size:18px;
+
+}
+
+.start-btn{
+
+font-size:15px;
+
+}
+
+}

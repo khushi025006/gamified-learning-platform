@@ -1,0 +1,321 @@
+/*=========================================================
+            LEARNQUEST LEADERBOARD
+        Blue/Purple RPG Theme
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*=========================================================
+                    PAGE
+=========================================================*/
+
+.leaderboard{
+
+    min-height:100vh;
+    width:100%;
+    padding:35px;
+    background:#04080f;
+    font-family:'Rajdhani',sans-serif;
+    position:relative;
+    overflow:hidden;
+
+}
+
+/* Stars */
+
+.leaderboard::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(circle,#ffffff70 1px,transparent 1px),
+radial-gradient(circle,#6ea8ff70 1px,transparent 1px),
+radial-gradient(circle,#8b5cf670 1px,transparent 1px);
+
+background-size:170px 170px;
+
+opacity:.5;
+
+pointer-events:none;
+
+}
+
+/* Nebula */
+
+.leaderboard::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at top,#2848c730,transparent 60%),
+radial-gradient(circle at bottom,#5b21b630,transparent 60%);
+
+pointer-events:none;
+
+}
+
+.leaderboard>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*=========================================================
+                  TITLE
+=========================================================*/
+
+.leaderboard h1{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:34px;
+
+color:#b9d9ff;
+
+text-align:center;
+
+margin-bottom:35px;
+
+letter-spacing:2px;
+
+text-shadow:0 0 20px #4b8fff;
+
+}
+
+/*=========================================================
+                GRID
+=========================================================*/
+
+.leaderboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+width:100%;
+
+}
+
+/*=========================================================
+                CARD
+=========================================================*/
+
+.leader-card{
+
+padding:28px;
+
+border-radius:18px;
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.95),
+rgba(8,12,30,.95)
+);
+
+border:1px solid rgba(110,170,255,.25);
+
+backdrop-filter:blur(15px);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+transition:.35s;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.leader-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#7ec3ff;
+
+box-shadow:
+0 0 30px rgba(70,140,255,.35);
+
+}
+
+/*=========================================================
+                TOP 3 COLORS
+=========================================================*/
+
+/* Rank 1 */
+
+.leader-card:nth-child(1){
+
+background:linear-gradient(
+135deg,
+rgba(18,28,65,.95),
+rgba(8,12,32,.95)
+);
+
+border:1px solid #7ec3ff;
+
+}
+
+/* Rank 2 */
+
+.leader-card:nth-child(2){
+
+background:linear-gradient(
+135deg,
+rgba(18,28,65,.95),
+rgba(8,12,32,.95)
+);
+
+border:1px solid #93c5fd;
+
+}
+
+/* Rank 3 */
+
+.leader-card:nth-child(3){
+
+background:linear-gradient(
+135deg,
+rgba(18,28,65,.95),
+rgba(8,12,32,.95)
+);
+
+border:1px solid #a5b4fc;
+
+}
+
+/* Remaining */
+
+.leader-card:nth-child(n+4){
+
+background:linear-gradient(
+145deg,
+rgba(18,28,65,.95),
+rgba(8,12,32,.95)
+);
+
+}
+
+/*=========================================================
+                TEXT
+=========================================================*/
+
+.leader-card span{
+
+display:block;
+
+width:100%;
+
+text-align:center;
+
+}
+
+.leader-card span:first-child{
+
+font-size:42px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+.leader-card span:nth-child(2){
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:24px;
+
+color:white;
+
+margin-top:5px;
+
+}
+
+.leader-card span:last-child{
+
+font-size:18px;
+
+font-weight:700;
+
+color:#c4e2ff;
+
+margin-top:10px;
+
+}
+
+/*=========================================================
+                RESPONSIVE
+=========================================================*/
+
+@media(max-width:900px){
+
+.leaderboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.leaderboard{
+
+padding:20px;
+
+}
+
+.leaderboard h1{
+
+font-size:28px;
+
+}
+
+.leader-card{
+
+padding:22px;
+
+}
+
+.leader-card span:first-child{
+
+font-size:34px;
+
+}
+
+.leader-card span:nth-child(2){
+
+font-size:20px;
+
+}
+
+.leader-card span:last-child{
+
+font-size:16px;
+
+}
+
+}

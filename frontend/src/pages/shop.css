@@ -1,0 +1,376 @@
+/*=========================================================
+                LEARNQUEST SHOP
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.shop-page{
+
+    min-height:100vh;
+
+    padding:35px;
+
+    background:#04080f;
+
+    font-family:'Rajdhani',sans-serif;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/*==============================
+        BACKGROUND
+===============================*/
+
+.shop-page::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(circle,#ffffff55 1px,transparent 1px),
+radial-gradient(circle,#6ea8ff55 1px,transparent 1px),
+radial-gradient(circle,#8b5cf655 1px,transparent 1px);
+
+background-size:170px 170px;
+
+opacity:.45;
+
+pointer-events:none;
+
+}
+
+.shop-page::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at top,#2848c730,transparent 60%),
+radial-gradient(circle at bottom,#5b21b630,transparent 60%);
+
+pointer-events:none;
+
+}
+
+.shop-page>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*==============================
+            TITLES
+===============================*/
+
+.shop-page h1{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:34px;
+
+text-align:center;
+
+color:#cbe5ff;
+
+margin-bottom:10px;
+
+text-shadow:0 0 18px rgba(70,150,255,.4);
+
+}
+
+.shop-page h2{
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:600;
+
+color:#9fc7ff;
+
+margin-bottom:35px;
+
+}
+
+/*==============================
+            GRID
+===============================*/
+
+.shop-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:28px;
+
+}
+
+/*==============================
+            CARD
+===============================*/
+
+.shop-card{
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.96),
+rgba(8,12,30,.96)
+);
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(90,160,255,.25);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.35);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Shine */
+
+.shop-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transition:.6s;
+
+}
+
+.shop-card:hover::before{
+
+left:120%;
+
+}
+
+.shop-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#7ec3ff;
+
+box-shadow:
+0 0 30px rgba(70,150,255,.35);
+
+}
+
+/*==============================
+            ICON
+===============================*/
+
+.shop-card h1{
+
+font-size:70px;
+
+margin-bottom:18px;
+
+filter:drop-shadow(0 0 18px rgba(90,170,255,.45));
+
+animation:floatIcon 3s ease-in-out infinite alternate;
+
+}
+
+@keyframes floatIcon{
+
+from{
+
+transform:translateY(0px);
+
+}
+
+to{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/*==============================
+        ITEM NAME
+===============================*/
+
+.shop-card h3{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:22px;
+
+color:#d8ecff;
+
+margin-bottom:10px;
+
+}
+
+/*==============================
+        DESCRIPTION
+===============================*/
+
+.shop-card p{
+
+color:#9fc7ff;
+
+font-size:17px;
+
+margin-top:10px;
+
+line-height:1.6;
+
+}
+
+/*==============================
+        PRICE
+===============================*/
+
+.price{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:10px 18px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#6d28d9
+);
+
+color:white;
+
+border-radius:30px;
+
+font-weight:bold;
+
+font-size:17px;
+
+}
+
+/*==============================
+        BUY BUTTON
+===============================*/
+
+.shop-card button{
+
+margin-top:22px;
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#4f46e5
+);
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.shop-card button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 22px rgba(70,150,255,.45);
+
+}
+
+/*==============================
+        RESPONSIVE
+===============================*/
+
+@media(max-width:768px){
+
+.shop-page{
+
+padding:20px;
+
+}
+
+.shop-page h1{
+
+font-size:28px;
+
+}
+
+.shop-page h2{
+
+font-size:18px;
+
+}
+
+.shop-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.shop-card{
+
+padding:24px;
+
+}
+
+.shop-card h1{
+
+font-size:60px;
+
+}
+
+}

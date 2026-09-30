@@ -1,0 +1,346 @@
+/*=========================================================
+                LEARNQUEST MISSIONS
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.missions-page{
+
+    min-height:100vh;
+
+    padding:35px;
+
+    background:#04080f;
+
+    font-family:'Rajdhani',sans-serif;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/*==========================
+        BACKGROUND
+===========================*/
+
+.missions-page::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(circle,#ffffff55 1px,transparent 1px),
+radial-gradient(circle,#5fa8ff55 1px,transparent 1px),
+radial-gradient(circle,#8b5cf655 1px,transparent 1px);
+
+background-size:170px 170px;
+
+opacity:.45;
+
+pointer-events:none;
+
+}
+
+.missions-page::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at top,#2448c230,transparent 60%),
+radial-gradient(circle at bottom,#5b21b630,transparent 60%);
+
+pointer-events:none;
+
+}
+
+.missions-page>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*==========================
+        HEADER
+===========================*/
+
+.missions-page h1{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:34px;
+
+color:#c7e4ff;
+
+margin-bottom:12px;
+
+text-shadow:0 0 20px rgba(70,150,255,.4);
+
+}
+
+.missions-page p{
+
+color:#9ec5ff;
+
+font-size:18px;
+
+margin-bottom:30px;
+
+}
+
+/*==========================
+        MISSION CARD
+===========================*/
+
+.mission-card{
+
+background:linear-gradient(
+145deg,
+rgba(15,25,60,.96),
+rgba(8,12,30,.96)
+);
+
+border:1px solid rgba(90,160,255,.25);
+
+border-radius:20px;
+
+padding:28px;
+
+margin-bottom:22px;
+
+transition:.35s;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.35);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* glowing border */
+
+.mission-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transition:.6s;
+
+}
+
+.mission-card:hover::before{
+
+left:100%;
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#7ec3ff;
+
+box-shadow:
+0 0 30px rgba(70,150,255,.35);
+
+}
+
+/*==========================
+        TITLE
+===========================*/
+
+.mission-card h3{
+
+font-family:'Cinzel Decorative',serif;
+
+font-size:22px;
+
+color:#d9ecff;
+
+margin-bottom:15px;
+
+}
+
+/*==========================
+        INFO
+===========================*/
+
+.mission-info{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:15px;
+
+}
+
+/* XP */
+
+.mission-info span:first-child{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#4f46e5
+);
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+}
+
+/* Reward */
+
+.mission-info span:last-child{
+
+background:linear-gradient(
+135deg,
+#4f46e5,
+#7c3aed
+);
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+}
+
+/*==========================
+      COMPLETE BUTTON
+===========================*/
+
+.complete-btn{
+
+margin-top:22px;
+
+width:100%;
+
+padding:14px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#6d28d9
+);
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.complete-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 22px rgba(70,150,255,.45);
+
+}
+
+/*==========================
+        RESPONSIVE
+===========================*/
+
+@media(max-width:900px){
+
+.mission-info{
+
+flex-direction:column;
+
+gap:15px;
+
+align-items:flex-start;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.missions-page{
+
+padding:20px;
+
+}
+
+.missions-page h1{
+
+font-size:28px;
+
+}
+
+.mission-card{
+
+padding:22px;
+
+}
+
+.mission-card h3{
+
+font-size:20px;
+
+}
+
+.mission-info span{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}

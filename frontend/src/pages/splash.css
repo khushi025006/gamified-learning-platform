@@ -1,0 +1,849 @@
+/* ===========================
+   IMPORT FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&display=swap');
+
+/* ===========================
+   ROOT
+=========================== */
+
+:root{
+
+--moveX:0px;
+--moveY:0px;
+
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+margin:0;
+padding:0;
+overflow:hidden;
+background:#020817;
+
+font-family:'Cinzel',serif;
+
+}
+
+/* ===========================
+   SPLASH
+=========================== */
+
+.splash{
+
+position:relative;
+
+width:100vw;
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:
+
+linear-gradient(
+180deg,
+#040b18 0%,
+#071226 40%,
+#0b1f3d 100%
+);
+
+cursor:default;
+
+}
+
+/* ===========================
+   SPACE
+=========================== */
+
+.space{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top,
+
+rgba(70,120,255,.18),
+
+transparent 60%);
+
+animation:
+
+spacePulse 8s ease-in-out infinite;
+
+}
+
+/* ===========================
+   NEBULA
+=========================== */
+
+.nebula{
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+left:50%;
+top:40%;
+
+transform:
+
+translate(-50%,-50%);
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(80,150,255,.18),
+
+transparent 70%);
+
+filter:blur(120px);
+
+animation:
+
+nebulaMove 12s ease-in-out infinite;
+
+}
+
+/* ===========================
+   CAMERA
+=========================== */
+
+.camera{
+
+position:absolute;
+
+inset:0;
+
+transform:
+
+translate(
+
+var(--moveX),
+
+var(--moveY)
+
+);
+
+transition:.4s;
+
+}
+
+/* ===========================
+   SCREEN GLOW
+=========================== */
+
+.screen-glow{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle,
+
+transparent 55%,
+
+rgba(0,0,0,.45));
+
+pointer-events:none;
+
+}
+
+/* ===========================
+   GOD RAYS
+=========================== */
+
+.god-rays{
+
+position:absolute;
+
+width:1200px;
+height:1200px;
+
+left:50%;
+top:25%;
+
+transform:
+
+translate(-50%,-50%);
+
+background:
+
+conic-gradient(
+
+transparent,
+
+rgba(255,255,255,.03),
+
+transparent,
+
+rgba(80,150,255,.05),
+
+transparent
+
+);
+
+filter:blur(90px);
+
+animation:
+
+rotateRays 40s linear infinite;
+
+opacity:.7;
+
+}
+/* ==========================================
+   STARS LAYER
+========================================== */
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+/* Tiny Stars */
+
+.stars::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle,#ffffff 1px,transparent 1.5px),
+radial-gradient(circle,#9ecbff 1px,transparent 1.5px),
+radial-gradient(circle,#7dd3fc .8px,transparent 1.3px);
+
+background-size:
+
+180px 180px,
+250px 250px,
+320px 320px;
+
+background-position:
+
+0 0,
+80px 120px,
+160px 70px;
+
+opacity:.75;
+
+animation:
+
+starDrift 140s linear infinite;
+
+}
+
+/* Second Layer */
+
+.stars::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle,#ffffff .8px,transparent 1.3px),
+radial-gradient(circle,#60a5fa 1px,transparent 1.5px);
+
+background-size:
+
+260px 260px,
+360px 360px;
+
+background-position:
+
+120px 50px,
+200px 200px;
+
+opacity:.45;
+
+animation:
+
+starDriftReverse 180s linear infinite;
+
+}
+/* ==========================================
+   SHOOTING STARS
+========================================== */
+
+.shooting{
+
+position:absolute;
+
+width:180px;
+
+height:2px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+white,
+
+#7dd3fc,
+
+transparent
+
+);
+
+border-radius:10px;
+
+filter:blur(1px);
+
+opacity:0;
+
+}
+
+.shooting::after{
+
+content:"";
+
+position:absolute;
+
+right:0;
+
+top:-2px;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:white;
+
+box-shadow:
+
+0 0 12px white,
+0 0 25px #60a5fa;
+
+}
+.shooting1{
+
+top:18%;
+left:-15%;
+
+animation:
+
+shoot1 9s linear infinite;
+
+}
+
+.shooting2{
+
+top:42%;
+left:-20%;
+
+animation:
+
+shoot2 13s linear infinite;
+
+animation-delay:3s;
+
+}
+
+.shooting3{
+
+top:70%;
+left:-25%;
+
+animation:
+
+shoot3 16s linear infinite;
+
+animation-delay:7s;
+
+}
+/* ==========================================
+   STAR ANIMATIONS
+========================================== */
+
+@keyframes starDrift{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-180px);
+
+}
+
+}
+
+@keyframes starDriftReverse{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(120px);
+
+}
+
+}
+@keyframes shoot1{
+
+0%,88%{
+
+opacity:0;
+
+transform:
+
+translateX(0)
+translateY(0)
+rotate(-25deg);
+
+}
+
+90%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateX(1500px)
+translateY(350px)
+rotate(-25deg);
+
+}
+
+}
+
+@keyframes shoot2{
+
+0%,90%{
+
+opacity:0;
+
+transform:
+
+translateX(0)
+translateY(0)
+rotate(-20deg);
+
+}
+
+92%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateX(1700px)
+translateY(420px)
+rotate(-20deg);
+
+}
+
+}
+
+@keyframes shoot3{
+
+0%,92%{
+
+opacity:0;
+
+transform:
+
+translateX(0)
+translateY(0)
+rotate(-18deg);
+
+}
+
+94%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateX(1600px)
+translateY(380px)
+rotate(-18deg);
+
+}
+
+}
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%);
+
+text-align:center;
+
+z-index:20;
+
+animation:
+heroAppear 2s ease;
+
+}
+.hero h1{
+
+position:relative;
+
+margin:0;
+
+font-family:'Cinzel',serif;
+
+font-size:110px;
+
+font-weight:900;
+
+letter-spacing:10px;
+
+text-transform:uppercase;
+
+color:#eef4ff;
+
+text-shadow:
+
+0 0 4px rgba(255,255,255,.35),
+
+0 0 12px rgba(90,150,255,.35),
+
+0 0 25px rgba(45,95,180,.25);
+
+animation:
+
+logoFloat 6s ease-in-out infinite,
+
+logoGlow 5s ease-in-out infinite;
+
+transition:.5s;
+
+}
+.hero h1::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-40%;
+
+width:25%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.9),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+animation:
+
+logoShine 6s linear infinite;
+
+filter:blur(2px);
+
+}
+.hero p{
+
+margin-top:22px;
+
+font-size:17px;
+
+font-weight:600;
+
+letter-spacing:12px;
+
+text-transform:uppercase;
+
+color:#b9cae8;
+
+opacity:.9;
+
+text-shadow:
+
+0 0 10px rgba(90,140,255,.18);
+
+animation:
+
+subtitleGlow 4s ease-in-out infinite;
+
+}
+/* ==========================================
+   HERO ANIMATION
+========================================== */
+
+@keyframes heroAppear{
+
+0%{
+
+opacity:0;
+
+transform:
+translate(-50%,-40%)
+scale(.9);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+}
+@keyframes logoFloat{
+
+0%{
+
+transform:
+translateY(0px);
+
+}
+
+50%{
+
+transform:
+translateY(-8px);
+
+}
+
+100%{
+
+transform:
+translateY(0px);
+
+}
+
+}
+@keyframes logoGlow{
+
+0%{
+
+text-shadow:
+
+0 0 4px rgba(255,255,255,.25),
+
+0 0 10px rgba(70,120,255,.25),
+
+0 0 22px rgba(45,95,180,.18);
+
+}
+
+50%{
+
+text-shadow:
+
+0 0 8px rgba(255,255,255,.45),
+
+0 0 18px rgba(90,150,255,.45),
+
+0 0 35px rgba(70,120,255,.28);
+
+}
+
+100%{
+
+text-shadow:
+
+0 0 4px rgba(255,255,255,.25),
+
+0 0 10px rgba(70,120,255,.25),
+
+0 0 22px rgba(45,95,180,.18);
+
+}
+
+}
+@keyframes logoShine{
+
+0%{
+
+left:-40%;
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+60%{
+
+left:120%;
+
+opacity:1;
+
+}
+
+100%{
+
+left:140%;
+
+opacity:0;
+
+}
+
+}
+@keyframes subtitleGlow{
+
+0%{
+
+opacity:.6;
+letter-spacing:10px;
+
+}
+
+50%{
+
+opacity:1;
+letter-spacing:13px;
+
+}
+
+100%{
+
+opacity:.6;
+letter-spacing:10px;
+
+}
+
+}
+@keyframes subtitleGlow{
+
+0%{
+
+opacity:.6;
+letter-spacing:10px;
+
+}
+
+50%{
+
+opacity:1;
+letter-spacing:13px;
+
+}
+
+100%{
+
+opacity:.6;
+letter-spacing:10px;
+
+}
+
+}
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:42%;
+
+transform:translate(-50%,-50%);
+
+width:650px;
+
+height:220px;
+
+background:
+
+radial-gradient(circle,
+
+rgba(70,130,255,.16),
+
+transparent 70%);
+
+filter:blur(80px);
+
+z-index:-1;
+
+animation:
+
+backgroundPulse 7s ease-in-out infinite;
+
+}

@@ -1,0 +1,69 @@
+.quiz-page {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f3f4f6;
+}
+
+.quiz-card {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.quiz-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.question-count {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 25px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option-btn {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.score-box {
+  text-align: center;
+  margin-top: 20px;
+  color: #059669;
+  font-weight: bold;
+}
+
+.quiz-not-found {
+  text-align: center;
+  padding: 50px;
+  color: red;
+  font-size: 24px;
+}

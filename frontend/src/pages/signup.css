@@ -1,0 +1,606 @@
+/* ============================================================
+   LEARNQUEST — SIGNUP PAGE CSS
+   Theme: Elegant Multi-Color Cosmos (Blue/Purple/Teal/Gold)
+   Matches Signup.jsx class names exactly.
+   Fonts:
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ══════════════════════════════════════
+   BACKGROUND — deep multi-tone galaxy
+══════════════════════════════════════ */
+.signup-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(30,60,120,.85)  0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(60,20,100,.70)  0%, transparent 50%),
+    radial-gradient(ellipse at 40% 10%, rgba(20,80,100,.55)  0%, transparent 45%),
+    radial-gradient(ellipse at 90% 80%, rgba(15,50,90,.55)   0%, transparent 45%),
+    linear-gradient(145deg, #060d1f 0%, #0a1628 35%, #0d1230 65%, #060818 100%);
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Multi-color starfield */
+.signup-container::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    radial-gradient(1px   1px   at  9% 12%, rgba(200,220,255,.82) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 25% 68%, rgba(180,210,255,.70) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 25%, rgba(255,255,255,.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 70% 82%, rgba(200,180,255,.76) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 86% 16%, rgba(255,245,200,.78) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 33% 92%, rgba(180,230,255,.62) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 92% 50%, rgba(255,255,255,.85) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 16% 44%, rgba(210,190,255,.70) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 60%  8%, rgba(255,255,255,.88) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 77% 58%, rgba(180,230,240,.65) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 44% 76%, rgba(255,240,200,.70) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 95% 85%, rgba(220,200,255,.66) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 20% 30%, rgba(200,230,255,.58) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Nebula fog */
+.signup-container::after {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 80% 20%, rgba(30,70,200,.17)  0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(80,20,160,.16)  0%, transparent 55%),
+    radial-gradient(ellipse 60% 45% at 40% 10%, rgba(20,120,150,.12) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 35% at 50% 100%,rgba(10,20,60,.55)   0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: signupNebFloat 24s ease-in-out infinite alternate;
+}
+
+@keyframes signupNebFloat {
+  from { transform: translateX(14px)  translateY(-6px); }
+  to   { transform: translateX(-14px) translateY(6px);  }
+}
+
+.signup-container > * { position: relative; z-index: 1; }
+
+/* ══════════════════════════════════════
+   PORTAL RING
+══════════════════════════════════════ */
+.portal-ring {
+  position: fixed;
+  width: 540px; height: 540px;
+  border-radius: 50%;
+  border: 1px solid rgba(100,160,255,.10);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: signupPortalSpin 32s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portal-ring::before {
+  content: '';
+  position: absolute; inset: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(120,60,200,.08);
+  animation: signupPortalSpin 22s linear infinite reverse;
+}
+
+.portal-ring::after {
+  content: '';
+  position: absolute; inset: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(20,160,180,.07);
+  animation: signupPortalSpin 13s linear infinite;
+}
+
+@keyframes signupPortalSpin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ══════════════════════════════════════
+   SIGNUP CARD
+══════════════════════════════════════ */
+.signup-card {
+  position: relative;
+  z-index: 10;
+  width: 400px;
+  background: rgba(10,18,42,.80);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(100,155,255,.20);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.045) inset,
+    0 32px 90px rgba(0,0,0,.58),
+    0 0 80px rgba(40,80,200,.09);
+}
+
+/* Animated multi-color top bar */
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    #06b6d4 0%,
+    #4f8ef7 25%,
+    #7c3aed 55%,
+    #f59e0b 80%,
+    #06b6d4 100%);
+  background-size: 200% 100%;
+  animation: signupBarShift 5s linear infinite;
+  z-index: 4;
+}
+
+@keyframes signupBarShift {
+  from { background-position: 0%   0%; }
+  to   { background-position: 200% 0%; }
+}
+
+/* Corner brackets */
+.card-corner {
+  position: absolute;
+  width: 18px; height: 18px;
+  border-color: rgba(140,190,255,.65);
+  border-style: solid;
+  z-index: 4;
+}
+.card-corner.tl { top:-1px;  left:-1px;  border-width:2px 0 0 2px; border-radius:5px 0 0 0; }
+.card-corner.tr { top:-1px;  right:-1px; border-width:2px 2px 0 0; border-radius:0 5px 0 0; }
+.card-corner.bl { bottom:-1px; left:-1px;  border-width:0 0 2px 2px; border-radius:0 0 0 5px; }
+.card-corner.br { bottom:-1px; right:-1px; border-width:0 2px 2px 0; border-radius:0 0 5px 0; }
+
+/* ══════════════════════════════════════
+   CARD HEADER
+══════════════════════════════════════ */
+.card-header {
+  padding: 28px 32px 18px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid rgba(100,155,255,.12);
+  background: linear-gradient(180deg, rgba(30,60,140,.32) 0%, transparent 100%);
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(120,180,255,.20), transparent);
+  animation: signupScanSlide 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes signupScanSlide {
+  from { top: -1px; }
+  to   { top: 100%; }
+}
+
+/* Emblem */
+.emblem {
+  width: 60px; height: 60px;
+  margin: 0 auto 16px;
+}
+
+.emblem-ring {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(100,160,255,.38);
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(60,160,200,.50), rgba(8,16,50,.96));
+  animation: signupEmbPulse 4s ease-in-out infinite;
+  box-shadow: 0 0 28px rgba(60,160,200,.20);
+}
+
+@keyframes signupEmbPulse {
+  0%,100% { box-shadow: 0 0 0 0    rgba(80,200,220,.0),  0 0 26px rgba(60,160,200,.18); }
+  50%      { box-shadow: 0 0 0 11px rgba(80,200,220,.06), 0 0 44px rgba(60,160,200,.34); }
+}
+
+.emblem-icon { font-size: 26px; }
+
+/* Titles */
+.game-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 19px; font-weight: 700;
+  color: #e8f2ff;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-shadow: 0 0 36px rgba(100,200,220,.28);
+}
+
+.game-subtitle {
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(160,195,255,.48);
+  margin-top: 5px;
+}
+
+/* ══════════════════════════════════════
+   STEP TRACKER (optional - 3 dots)
+══════════════════════════════════════ */
+.step-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px 0;
+}
+
+.step-dot {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(100,155,255,.28);
+  background: rgba(10,18,42,.8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  color: rgba(120,165,225,.35);
+  transition: all .3s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.step-dot.active {
+  border-color: rgba(100,165,255,.78);
+  background: rgba(30,60,140,.5);
+  color: #c8e0ff;
+}
+
+.step-dot.done {
+  border-color: rgba(100,165,255,.4);
+  color: rgba(150,190,255,.6);
+}
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(100,155,255,.18);
+  max-width: 44px;
+}
+
+/* ══════════════════════════════════════
+   CARD BODY
+══════════════════════════════════════ */
+.card-body { padding: 20px 28px 24px; }
+
+/* XP bar */
+.xp-bar-wrap {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(100,150,255,.12);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.xp-label {
+  font-size: 10px; letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(155,190,255,.62);
+  white-space: nowrap; font-weight: 600;
+}
+
+.xp-track {
+  flex: 1; height: 5px;
+  background: rgba(255,255,255,.06);
+  border-radius: 3px; overflow: hidden;
+}
+
+.xp-fill {
+  height: 100%; width: 5%;
+  background: linear-gradient(90deg, #06b6d4, #4f8ef7);
+  border-radius: 3px;
+  animation: signupXpLoad 1.6s .4s ease-out both;
+}
+
+@keyframes signupXpLoad { from{width:0%} to{width:5%} }
+
+.xp-val {
+  font-size: 10px;
+  color: rgba(155,190,255,.62);
+  letter-spacing: .05em; font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════
+   FIELD ROW (2-col layout for name fields)
+══════════════════════════════════════ */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Fields */
+.field-group { margin-bottom: 14px; }
+
+.field-label {
+  display: block; font-size: 10px;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(165,205,255,.76);
+  margin-bottom: 6px; font-weight: 600;
+}
+
+.field-wrap { position: relative; display: flex; align-items: center; }
+
+.field-icon {
+  position: absolute; left: 12px;
+  color: rgba(120,175,255,.50);
+  font-size: 14px; pointer-events: none; line-height: 1;
+}
+
+.game-input,
+.game-select {
+  width: 100%;
+  padding: 11px 14px 11px 36px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(100,155,255,.20);
+  border-radius: 10px;
+  color: #ddeeff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 400;
+  outline: none;
+  transition: border-color .3s, background .3s, box-shadow .3s;
+  letter-spacing: .02em;
+}
+
+.game-input::placeholder { color: rgba(120,165,225,.28); }
+
+.game-input:focus,
+.game-select:focus {
+  border-color: rgba(100,165,255,.58);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 0 0 3px rgba(80,130,255,.09);
+}
+
+.game-input:focus + .field-glow,
+.game-select:focus + .field-glow { opacity: 1; }
+
+.field-glow {
+  position: absolute; inset: 0;
+  border-radius: 10px; pointer-events: none;
+  opacity: 0; transition: opacity .3s;
+  box-shadow: 0 0 0 1px rgba(100,165,255,.22), inset 0 0 16px rgba(60,100,220,.05);
+}
+
+/* Select dropdown */
+.game-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.game-select option {
+  background: #0a1628;
+  color: #ddeeff;
+}
+
+.select-arrow {
+  position: absolute; right: 13px;
+  color: rgba(120,175,255,.5);
+  font-size: 11px; pointer-events: none;
+}
+
+/* ══════════════════════════════════════
+   PASSWORD STRENGTH BAR
+══════════════════════════════════════ */
+.strength-wrap {
+  display: flex; gap: 3px;
+  margin-top: 6px;
+}
+
+.strength-seg {
+  flex: 1; height: 2px;
+  border-radius: 1px;
+  background: rgba(100,155,255,.12);
+  transition: background .3s;
+}
+
+.strength-seg.seg-1 { background: rgba(220,90,90,.85);  }
+.strength-seg.seg-2 { background: rgba(220,170,60,.85); }
+.strength-seg.seg-3 { background: rgba(80,180,140,.85); }
+.strength-seg.seg-4 { background: rgba(100,200,255,.92); }
+
+/* ══════════════════════════════════════
+   CLASS / CHARACTER SELECTOR GRID
+══════════════════════════════════════ */
+.class-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.class-badge {
+  padding: 9px 8px;
+  border: 1px solid rgba(100,155,255,.18);
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+  color: rgba(165,205,255,.55);
+  font-size: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+.class-badge:hover {
+  border-color: rgba(140,190,255,.42);
+  color: #ddeeff;
+  background: rgba(255,255,255,.06);
+}
+
+.class-badge.selected {
+  border-color: rgba(100,180,255,.7);
+  color: #c8e8ff;
+  background: rgba(60,120,220,.18);
+}
+
+.class-icon {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* ══════════════════════════════════════
+   OPTIONS ROW
+══════════════════════════════════════ */
+.options-row {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 18px;
+}
+
+.checkbox-wrap { display: flex; align-items: center; gap: 7px; cursor: pointer; }
+
+.game-checkbox {
+  width: 15px; height: 15px;
+  border: 1.5px solid rgba(100,155,255,.38);
+  border-radius: 4px;
+  background: rgba(255,255,255,.04);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color .2s;
+  font-size: 9px; color: #7cb9ff;
+}
+
+.game-checkbox:hover { border-color: rgba(140,195,255,.72); }
+.game-checkbox.checked::after { content: '✓'; }
+
+.checkbox-label {
+  font-size: 12px;
+  color: rgba(170,205,255,.62);
+}
+
+/* ══════════════════════════════════════
+   SIGNUP BUTTON
+══════════════════════════════════════ */
+.signup-btn {
+  width: 100%; padding: 13px;
+  margin-top: 6px;
+  background: linear-gradient(135deg,
+    rgba(20,160,180,.88),
+    rgba(55,100,240,.88));
+  border: 1px solid rgba(100,200,220,.38);
+  border-radius: 10px;
+  color: #e8f8ff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: .05em;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: border-color .2s, transform .15s;
+}
+
+.signup-btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.09), transparent);
+  border-radius: 10px; pointer-events: none;
+}
+
+.signup-btn::before {
+  content: '';
+  position: absolute; top:0; left:-100%;
+  width:100%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  transition:left .4s;
+}
+
+.signup-btn:hover {
+  border-color: rgba(160,225,235,.65);
+  transform: translateY(-1px);
+}
+.signup-btn:hover::before { left: 100%; }
+
+/* ══════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════ */
+.divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 18px 0 14px;
+}
+
+.divider-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(100,155,255,.18), transparent);
+}
+
+.divider-text {
+  font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(135,175,225,.38);
+}
+
+/* ══════════════════════════════════════
+   SOCIAL BUTTONS
+══════════════════════════════════════ */
+.social-row { display: flex; gap: 10px; }
+
+.social-btn {
+  flex: 1; padding: 10px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(100,155,255,.18);
+  border-radius: 10px;
+  color: rgba(175,210,255,.70);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+  letter-spacing: .04em;
+}
+
+.social-btn:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(140,190,255,.38);
+  color: #ddeeff;
+}
+
+/* ══════════════════════════════════════
+   CARD FOOTER
+══════════════════════════════════════ */
+.card-footer {
+  border-top: 1px solid rgba(100,155,255,.12);
+  padding: 16px 28px;
+  text-align: center;
+  background: rgba(0,0,0,.12);
+}
+
+.footer-text {
+  font-size: 13px;
+  color: rgba(155,190,245,.45);
+  letter-spacing: .03em;
+}
+
+.login-link {
+  color: rgba(140,200,255,.78);
+  cursor: pointer; font-weight: 600;
+  transition: color .2s;
+}
+.login-link:hover { color: #c8e0ff; }
+
+/* ══════════════════════════════════════
+   SHAKE ON VALIDATION ERROR
+══════════════════════════════════════ */
+@keyframes shake {
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-8px)}
+  40%{transform:translateX(8px)}
+  60%{transform:translateX(-5px)}
+  80%{transform:translateX(5px)}
+}
+
+.signup-card.shake {
+  animation: shake .45s ease;
+  border-color: rgba(255,120,120,.55);
+}
